@@ -1,0 +1,226 @@
+
+        :root {
+            --bg-dark: #e8eeff;
+            --accent-blue: #0038a8;
+            --light-blue: #8ae3ff;
+            --card-bg: #637dde;
+            --text-color: #e0e6ed;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            max-width: 280px;
+            height: auto;
+            filter: drop-shadow(0px 0px 8px rgba(161, 233, 255, 0.4));
+        }
+
+        .hero-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: linear-gradient(180deg, rgba(95, 191, 255, 0.3) 0%, rgb(32, 55, 137) 100%);
+            border-radius: 16px;
+            padding: 24px;
+            align-items: center;
+            border: 1px solid rgba(126, 175, 244, 0.2);
+        }
+
+        .character-img {
+            flex: 1 1 300px;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .character-img img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .character-info {
+            flex: 1 1 400px;
+        }
+
+        .character-info h1 {
+            font-size: 2.2rem;
+            margin-top: 0;
+            color: var(--light-blue);
+        }
+
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .stats-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-table td:first-child {
+            font-weight: bold;
+            color: #a0aec0;
+            width: 40%;
+        }
+
+        /* Панель звука */
+        .audio-player {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-blue);
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin: 24px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 4px 15px rgba(99, 96, 235, 0.5);
+        }
+
+        .play-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.1s ease;
+        }
+
+        .play-btn:active {
+            transform: scale(0.95);
+        }
+
+        .play-btn img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .player-info {
+            flex-grow: 1;
+        }
+
+        .track-title {
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: #333;
+            border-radius: 3px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--light-blue));
+            transition: width 0.1s linear;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .gallery-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+           
+        }
+
+        .gallery-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.2s ease-in-out;
+         
+        }
+        .gallery-card img:hover{
+               transform: scale(1.1);
+        }
+/* Главный контейнер (заменяет ваш .slider-container) */
+    .character-img {
+    position: relative;
+    max-width: 200%; /* Растягивается по ширине родительского блока */
+    margin: 10px auto;   /* Центрирование */
+}
+
+/* Окно, внутри которого движутся картинки */
+    .slider-window {
+    width: 100%;
+    overflow: hidden; /* Прячет вторую картинку */
+}
+
+/* Лента-трек, в которой картинки стоят в один ряд */
+    .slider-track {
+    display: flex;
+    margin-left: -20px;
+    margin-top: -50px;
+    width: 250%; /* Так как картинки две, лента в два раза шире окна */
+    transition: transform 1s ease-in-out; /* Плавность перемещения (0.5 сек) */
+}
+
+/* Стили для картинок */
+    .slider-img {
+    width: 60%; /* Каждая картинка занимает ровно половину от 200% ширины ленты */
+    height: 145px;
+    display: block; /* Больше не скрываем через none */
+}
+
+/* Стили для стрелок */
+    .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(15, 11, 119, 0.5);
+    color: rgb(234, 235, 255);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    user-select: none;
+    transition: background-color 0.3s;
+    z-index: 10; /* Стрелки всегда поверх картинок */
+}
+
+    .arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev { left: 10px; }  /* Левая стрелка */
+.next { right: 10px; } /* Правая стрелка */

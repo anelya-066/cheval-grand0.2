@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Cheval Grand | Uma Musume</title>
+    <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="img/Cheval Grand-1.png" alt="Cheval Grand Logo" class="logo">
+    </header>
+
+    <section class="hero-section">
+        <div class="character-img">
+             <div class="slider-window">
+        <!-- Лента, которая плавно двигается -->
+        <div class="slider-track" id="character-track">
+            <img class="slider-img" src="img/image 1.png" alt="Картинка 1">
+            <img class="slider-img" src="img/Cheval_Grand_(Proto).png" alt="Картинка 2">
+        </div>
+    </div>
+
+    <!-- Стрелки (передаем направление в функцию) -->
+    <button class="arrow prev" onclick="changeSlide(-1)">❮</button>
+    <button class="arrow next" onclick="changeSlide(1)">❯</button>
+        </div>
+        <div class="character-info">
+            <h1>Cheval Grand (シュヴァルグラン)</h1>
+            <p>Застенчивая, но крайне целеустремленная девочка-лошадь. Находится в тени своих талантливых сестер, но неустанно трудится, чтобы доказать свою собственную силу на дистанции.</p>
+            
+            <table class="stats-table">
+                <tr>
+                    <td>Рост:</td>
+                    <td>160 см</td>
+                </tr>
+                <tr>
+                    <td>Специализация:</td>
+                    <td>Средние / Длинные дистанции</td>
+                </tr>
+                <tr>
+                    <td>Стиль бега:</td>
+                    <td>Загонщик (Between / Stalker)</td>
+                </tr>
+                <tr>
+                    <td>Характер:</td>
+                    <td>Скромный, тихий, упорный</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <div class="audio-player">
+        <button class="play-btn" id="playBtn" onclick="togglePlay()">
+            <img src="img/Play.png" alt="Play">
+        </button>
+        <div class="player-info">
+            <div class="track-title">光の後ろ姿</div>
+            <div class="progress-bar" id="progressBar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </div>
+        <audio id="audio" src="bgm/[Lyrics] [光の後ろ姿] [A Shining Silhouette] [ENJPRomaji].mp3"></audio>
+    </div>
+
+    <div class="gallery">
+        <div class="gallery-card">
+            <img src="img/image 2.png" alt="Chibi Avatar">
+            <p>Чиби-стикер</p>
+        </div>
+        <div class="gallery-card">
+            <img src="img/image 3.png" alt="Support Card">
+            <p>Карта поддержки</p>
+        </div>
+    </div>
+</div>
+
+  <script
+    src="js/a.js">
+</script>
+
+
+</body>
+</html>

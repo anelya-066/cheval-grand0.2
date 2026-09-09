@@ -85,7 +85,7 @@
             width: 40%;
         }
 
-
+        /* Панель звука */
         .audio-player {
             background-color: var(--card-bg);
             border: 1px solid var(--accent-blue);
@@ -173,35 +173,36 @@
         .gallery-card img:hover{
                transform: scale(1.1);
         }
-
+/* Главный контейнер (заменяет ваш .slider-container) */
     .character-img {
     position: relative;
-    max-width: 200%; 
-    margin: 10px auto;  
+    max-width: 200%; /* Растягивается по ширине родительского блока */
+    margin: 10px auto;   /* Центрирование */
 }
 
-
+/* Окно, внутри которого движутся картинки */
     .slider-window {
     width: 100%;
-    overflow: hidden; 
+    overflow: hidden; /* Прячет вторую картинку */
 }
 
+/* Лента-трек, в которой картинки стоят в один ряд */
     .slider-track {
     display: flex;
     margin-left: -20px;
     margin-top: -50px;
-    width: 250%; 
-    transition: transform 1s ease-in-out; 
+    width: 250%; /* Так как картинки две, лента в два раза шире окна */
+    transition: transform 1s ease-in-out; /* Плавность перемещения (0.5 сек) */
 }
 
-
+/* Стили для картинок */
     .slider-img {
-    width: 60%; 
+    width: 60%; /* Каждая картинка занимает ровно половину от 200% ширины ленты */
     height: 145px;
-    display: block; 
+    display: block; /* Больше не скрываем через none */
 }
 
-
+/* Стили для стрелок */
     .arrow {
     position: absolute;
     top: 50%;
@@ -214,12 +215,34 @@
     font-size: 24px;
     user-select: none;
     transition: background-color 0.3s;
-    z-index: 10; 
+    z-index: 10; /* Стрелки всегда поверх картинок */
 }
 
     .arrow:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.prev { left: 10px; }  
-.next { right: 10px; } 
+.prev { left: 10px; }  /* Левая стрелка */
+.next { right: 10px; } /* Правая стрелка */
+
+
+    .info {
+      flex: 1 1 400px;  
+      color: #443f5a;
+    }
+    .textline {
+         border-bottom: 2px solid #9095e5;
+         padding-top: 5px; /* отступ между линией и текстом */
+    }
+     .mainli{
+        color: #7960ed;
+        font-weight: bold;
+        margin-bottom: 20px;
+     }
+
+     .boldtext {
+        margin-left: 55px;
+     }
+     .list {
+        padding-bottom: 10px;
+     }
